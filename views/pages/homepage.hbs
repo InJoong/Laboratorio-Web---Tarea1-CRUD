@@ -1,0 +1,15 @@
+<h1>Hola MVC</h1>
+<p>This is my frist page</p>
+<button onclick="window.location='./about-us'">Nosotros</button>
+
+<h2>Tarea 1: CRUD</h2>
+<button onclick="window.location='./products/create'">Crear producto</button>
+<p>Lista de productos:</p>
+{{#each products}}
+<p>{{ id }} - {{ name }}</p> 
+<button onclick="window.location='./products/{{id}}'">Detalles</button> 
+<button onclick="window.location='./products/{{id}}/edit'">Actualizar</button> 
+<form method="POST" action="/products/{{ id }}?_method=DELETE">
+    <input type="submit" value="Borrar">
+</form>
+{{/each}}

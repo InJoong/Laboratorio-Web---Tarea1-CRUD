@@ -1,0 +1,23 @@
+<h1>Product</h1>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <td>{{ product.name }}</td>
+    </tr>
+    <tr>
+        <th>Precio</th>
+        <td>{{ product.price }}</td>
+    </tr>
+    <tr>
+        <th>Descripcion</th>
+        <td>{{ product.description }}</td>
+    </tr>
+    <tr>
+        <th><button onclick="window.location='./{{ product.id }}/edit'">Actualizar</button></th>
+        <td>
+            <form method="POST" action="/products/{{ product.id }}?_method=DELETE">
+                <input type="submit" value="Borrar">
+            </form>
+        </td>
+    </tr>
+</table>
